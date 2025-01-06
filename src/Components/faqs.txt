@@ -1,0 +1,14 @@
+FAQs
+Q1: What is this website about? A: This website provides tools for downloading and converting files, as well as information about our services and contact details.
+
+Q2: How do I use the downloader tool? A: Navigate to the "Downloader" page from the navigation menu. Enter the URL of the file you want to download, and click the "Download" button. The file will be saved to your device.
+
+Q3: What types of files can I convert? A: Our converter tool supports various file types, including documents, images, audio, and video files. For a detailed list, please visit the "Converter" page.
+
+Q4: Is there a limit to the file size I can upload? A: Yes, the maximum file size you can upload is 100MB. If your file exceeds this limit, you may need to compress it before uploading.
+
+Q5: How can I contact customer support? A: You can contact us by navigating to the "Contact" page and filling out the contact form. We will get back to you as soon as possible.
+
+Q6: Are my files secure on this website? A: Yes, we take your privacy and security very seriously. All uploaded files are encrypted and are only accessible to you.
+
+Q7: Is this service free? A: Yes, our basic services are free. However, we offer premium features that require a subscription. Check out our "About" page for more details.

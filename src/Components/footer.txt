@@ -1,0 +1,195 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+  FaTelegram,
+  FaArrowUpRightFromSquare,
+  FaEnvelope,
+  FaPhone,
+  FaLocationDot,
+} from "react-icons/fa6";
+import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
+import { useState } from "react";
+
+
+function Footer() {
+    const [email, setEmail] = useState("");
+    const [subscriptionMessage, setSubscriptionMessage] = useState("");
+  
+    const handleSubscription = (event) => {
+      event.preventDefault();
+  
+      if (!email) {
+          setSubscriptionMessage("Please enter your email address.");
+          return;
+      }
+  
+      // Simulate API call
+        setTimeout(() => {
+          setSubscriptionMessage(`Thank you for subscribing with ${email} !`);
+          setEmail("");
+      }, 1000);
+    };
+  
+    const handleEmailChange = (event) => {
+      setEmail(event.target.value);
+      setSubscriptionMessage("");
+    };
+  
+  
+    return (
+      <footer className="min-h-[200px] bg-gray-800 text-white p-4">
+        <article className="flex flex-col md:flex-row justify-evenly items-center gap-8">
+          <section className="mb-4 md:mb-0">
+            <Link to="/">
+              <img
+                className="h-16 w-16"
+                src="logo512.png"
+                alt="Your Website Name Logo"
+              />
+            </Link>
+          </section>
+
+          <section className="mb-4 md:mb-0">
+            <h2 className="mb-2">Follow US</h2>
+            <hr className="w-10/12 border-t border-gray-600 mb-3" />
+            <Link
+              to="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram Page"
+              className="flex items-center mb-1"
+            >
+              <FaInstagram className="mr-1" />
+              Instagram
+              <FaArrowUpRightFromSquare className="ml-1 text-xs" />
+            </Link>
+
+            <Link
+              to="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook Page"
+              className="flex items-center mb-1"
+            >
+              <FaFacebook className="mr-1" /> Facebook
+              <FaArrowUpRightFromSquare className="ml-1 text-xs" />
+            </Link>
+
+            <Link
+              to="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Twitter Page"
+              className="flex items-center mb-1"
+            >
+              <FaTwitter className="mr-1" />
+              Twitter
+              <FaArrowUpRightFromSquare className="ml-1 text-xs" />
+            </Link>
+
+            <Link
+              to="https://www.telegram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Telegram Channel"
+              className="flex items-center"
+            >
+              <FaTelegram className="mr-1" /> Telegram
+              <FaArrowUpRightFromSquare className="ml-1 text-xs" />
+            </Link>
+          </section>
+
+          <section className="mb-4 md:mb-0">
+            <h2 className="mb-2">Useful Links</h2>
+            <hr className="w-10/12 border-t border-gray-600 mb-3" />
+
+            <Link to="/downloader" title="Downloader Page" className="mb-1 block">
+              Downloader
+            </Link>
+            <Link to="/converter" title="Converter Page" className="mb-1 block">
+              Converter
+            </Link>
+            <Link
+              to="/faqs"
+              title="Frequently Asked Questions Page"
+              className="mb-1 block"
+            >
+              FAQs
+            </Link>
+            <Link to="/contact" title="Contact Us Page" className="block">
+              Contact US
+            </Link>
+          </section>
+
+           <section className="mb-4 md:mb-0">
+              <h2 className="mb-2">Newsletter</h2>
+              <hr className="w-10/12 border-t border-gray-600 mb-3" />
+                <form className="flex flex-col gap-2" onSubmit={handleSubscription}>
+                  
+                    <input 
+                       type="email" 
+                       placeholder="Your email"
+                       value={email}
+                        onChange={handleEmailChange}
+                      className="bg-gray-700 p-2 rounded text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                        Subscribe
+                    </button>
+                    {subscriptionMessage && <p className="text-sm mt-2">{subscriptionMessage}</p>}
+                </form>
+            </section>
+        </article>
+
+
+        <article className="flex justify-between items-center flex-wrap mt-6">
+          <section className="flex flex-col gap-2">
+              <h2 className="mb-2">Contact</h2>
+              <hr className="w-10/12 border-t border-gray-600 mb-3" />
+            <address className="not-italic">
+              <p className="flex items-center">
+                <FaLocationDot className="mr-2" /> 123 Main St, City, Country
+              </p>
+              <p className="flex items-center">
+                <FaPhone className="mr-2" /> +1-555-123-4567
+              </p>
+              <p className="flex items-center">
+                <FaEnvelope className="mr-2" /> info@example.com
+              </p>
+            </address>
+          </section>
+
+          <section className="mb-4 md:mb-0">
+            <h2 className="mb-2">Payment Methods</h2>
+            <hr className="w-10/12 border-t border-gray-600 mb-3" />
+            <div className="flex gap-4">
+              <FaCcVisa className="text-2xl" />
+              <FaCcMastercard className="text-2xl" />
+              <FaCcPaypal className="text-2xl" />
+            </div>
+          </section>
+
+          <section className="mb-4 md:mb-0">
+                <h2 className="mb-2">Sitemap</h2>
+                <hr className="w-10/12 border-t border-gray-600 mb-3" />
+                <Link to="/sitemap" title="Sitemap Page">
+                   View Sitemap
+                </Link>
+           </section>
+
+        </article>
+
+        <hr className="w-10/12 mx-auto mt-6 border-t border-gray-600" />
+
+        <p className="p-2 justify-self-center flex text-center">
+          Copyright © 2024 Your Company. All rights reserved.
+        </p>
+      </footer>
+    );
+  }
+
+
+export default Footer;
